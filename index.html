@@ -2,51 +2,100 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
   
   <title>Frontend Mentor | Contact form</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
+
 </head>
-<body>
 
-  Contact Us
+<body class="d-flex flex-column justify-content-center align-items-center mt-5">
 
-  First Name
-  This field is required
+  <main class="card d-flex flex-column mt-4 p-4 rounded-3 gap-3 width-custom justify-content-center">
+    
+    <h1>Contact us</h1>
 
-  Last Name
-  This field is required
+    <div class="d-flex flex-md-row flex-column justify-content-between gap-3" id="f_name_l_name">
+      <div class="d-flex flex-column gap-1 w-100">
+        <label for="first name" class="head_label">First Name</label>
+        <input type="text" name="first name" id="fname" class="rounded">
+        <p class=error_message>This field is required</p>
+      </div>
 
-  Email Address
-  Please enter a valid email address
-  This field is required
+      <div class="d-flex flex-column gap-1 w-100">
+        <label for="lastname" class="head_label">Last Name</label>
+        <input type="text" name="last name" id="lname" class="rounded w-100">
+        <p class=error_message>This field is required</p>
+      </div>
+    </div>
 
-  Query Type
-  General Enquiry
-  Support Request
-  Please select a query type
+    <div class="d-flex flex-column gap-1">
+      <label for="email" class="head_label">Email Address</label>
+      <input type="email" name="email" id="email" class="rounded w-100">
+      <p class=error_message>Please enter a valid email address</p>
+    </div>
 
-  Message
-  This field is required
 
-  I consent to being contacted by the team
-  To submit this form, please consent to being contacted
+    <div class="d-flex flex-column">
+      <p role="label" class="head_label">Query Type</p>
 
-  Submit
+      <div class="d-flex flex-md-row flex-column gap-3">
+      <div class="form-check radio_container w-100">
+        <input type="radio" name="general enquiry" id="gen_enq" class="form-check-input" value="general enquiry">
+        <label for="gen_enq" class="form-check-label ps-2"> General Enquiry</label>
+      </div>
 
-  Message Sent!
-  Thanks for completing the form. We'll be in touch soon!
+      <div class="form-check radio_container w-100">
+        <input type="radio" name="support request" id="sup_req" class="form-check-input" value="support request">
+        <label for="sup_req" class="form-check-label ps-2"> Support Request</label>
+      </div>
+      <p class="error_message">Please select a query type</p>
+      </div>
+    </div>
+
+
+    <div class="d-flex flex-column gap-1 form-check" id="message_container">
+      <label for="message" class="head_label">Message</label>
+      <textarea name="message" id="message" class="rounded-3 w-100"></textarea>
+      <p class="error_message">This field is required</p>
+    </div>
+
+    <div class="form-check gap-1">
+      <input type="checkbox" name="consent" id="consent" class="form-check-input">
+      <label for="consent" class="form-check-label">I consent to being contacted by the team</label>
+      <br>
+      <p class="error_message">To submit this form, please consent to being contacted</p>
+    </div>
+
+    <button>Submit</button>
+
+  </main>
+
+  <div class="toast" role="alert">
+    <div class="toast-header">
+      Message Sent!
+    </div>
+    <div class="toast-body">
+      Thanks for completing the form. We'll be in touch soon!
+    </div>
+  </div>
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="https://github.com/DrMetr">DrMetr</a>.
   </div>
+
 </body>
 </html>

@@ -5,3 +5,96 @@
     --Grey500_medium: hsl(186,15%,59%);
     --Grey900_darker: hsl(187,24%,22%);
     }
+
+
+*, *::after, *::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Karla', sans-serif;
+    background-color: var(--Green200_lighter);
+}
+
+.width-custom {
+    min-width: 350px;
+    width: 90vw;
+
+    @media screen and (min-width: 768px) {
+        min-width: 450px;
+        width: 50vw;
+    }
+}
+
+.head_label::after {
+    content: '*';
+    color: var(--Green600_medium);
+    margin-left: 0.5em;
+}
+
+input, textarea {
+    border: 1px solid var(--Grey500_medium);
+    height: 2lh;
+    resize: none;
+    outline: none;
+}
+
+input:hover, input:focus, textarea:hover {
+    border: 1px solid var(--Green600_medium);
+    outline: none;
+    cursor: pointer;
+}
+
+input:focus, input:active, textarea:active, textarea:focus  {
+    background-color: var(--Green200_lighter);
+}
+
+.radio_container {
+    border: 1px solid var(--Grey500_medium);
+    border-radius: 5px;
+    padding: 0.5rem;
+    padding-left: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+#message_container {
+    margin-left: -1.5rem;
+}
+
+#message {
+    height: 5lh;
+    box-sizing: border-box;
+    padding: 1rem;
+}
+
+button {
+    background-color: var(--Green600_medium);
+    color: white;
+    border: none;
+    height: 2lh;
+    border-radius: 10px;
+}
+
+button:hover, button:focus {
+    background-color: var(--Grey900_darker);
+}
+
+.error_message {
+    color: var(--Red);
+    display: none;
+}
+
+.error_state {
+    border: 1px solid var(--Red);
+}
+
+.toast {
+    background-color: var(--Grey900_darker);
+}
+
+.toast-header::before {
+    content: url("assets/images/icon-success-check.svg");
+}
