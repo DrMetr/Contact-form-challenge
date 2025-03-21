@@ -15,7 +15,16 @@
 
 body {
     font-family: 'Karla', sans-serif;
+    font-weight: 400;
     background-color: var(--Green200_lighter);
+}
+
+main {
+    margin-top: 7vw;
+}
+
+h1 {
+    font-weight: 700;
 }
 
 .width-custom {
@@ -39,6 +48,7 @@ input, textarea {
     height: 2lh;
     resize: none;
     outline: none;
+    padding-left: 0.5rem;
 }
 
 input:hover, input:focus, textarea:hover {
@@ -66,8 +76,10 @@ input:focus, input:active, textarea:active, textarea:focus  {
 
 #message {
     height: 5lh;
-    box-sizing: border-box;
-    padding: 1rem;
+}
+
+.option_label {
+    cursor: pointer;
 }
 
 button {
@@ -85,16 +97,33 @@ button:hover, button:focus {
 .error_message {
     color: var(--Red);
     display: none;
+    margin-bottom: -0.5rem;
 }
 
 .error_state {
     border: 1px solid var(--Red);
+    color: var(--Red);
+}
+
+.toast, .toast-header {
+    background-color: var(--Grey900_darker);
+    color: white;
+    border-radius: 10px;
 }
 
 .toast {
-    background-color: var(--Grey900_darker);
+    position: absolute;
+    top: 2vw;
+    padding: 0.5rem;
+}
+
+.toast-header {
+    border: none;
+    font-weight: 700;
+    margin-bottom: -1rem;
 }
 
 .toast-header::before {
     content: url("assets/images/icon-success-check.svg");
+    margin-right: 0.3rem;
 }
