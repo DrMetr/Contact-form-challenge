@@ -52,17 +52,20 @@
       <p role="label" class="head_label">Query Type</p>
 
       <div class="d-flex flex-md-row flex-column gap-3">
-      <div class="form-check radio_container w-100">
-        <input type="radio" name="query type" id="gen_enq" class="form-check-input" value="general enquiry" required>
-        <label for="gen_enq" class="form-check-label ps-2 option_label"> General Enquiry</label>
+        <div class="form-check radio_container w-100">
+          <input type="radio" name="query type" id="gen_enq" class="form-check-input" value="general enquiry" required>
+          <label for="gen_enq" class="form-check-label ps-2 option_label"> General Enquiry</label>
+        </div>
+
+        <div class="form-check radio_container w-100">
+          <input type="radio" name="query type" id="sup_req" class="form-check-input" value="support request">
+          <label for="sup_req" class="form-check-label ps-2 option_label"> Support Request</label>
+        </div>
       </div>
 
-      <div class="form-check radio_container w-100">
-        <input type="radio" name="query type" id="sup_req" class="form-check-input" value="support request">
-        <label for="sup_req" class="form-check-label ps-2 option_label"> Support Request</label>
-      </div>
-      <p class="error_message">Please select a query type</p>
-      </div>
+        <p class="error_message" id="queryType_error_message">
+          Please select a query type
+        </p>
     </div>
 
 
@@ -84,12 +87,12 @@
   </form>
 </main>
 
-  <div class="toast hide" role="alert">
+  <div class="toast" role="alert">
     <div class="d-flex flex-row justify-content-between pe-1">
     <div class="toast-header">
       Message Sent! 
     </div>
-      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      <button type="button" class="btn-close" id="close_toast" aria-label="Close"></button>
     </div>
     <div class="toast-body">
       Thanks for completing the form. We'll be in touch soon!
