@@ -49,18 +49,24 @@ submit_button.addEventListener("click", (event) => {
     });
 
     let errors = document.querySelectorAll(".error_message");
+    let counter = 0;
     for (let error of errors){
-        if (error.style.display != "none"){
-            return;
-        } else {
-            if (toast.classList.contains("hide")) {
-            toast.classList.replace("hide", "show");
-            } else {
-                toast.classList.add("show");
-            }}}
-    
+        if (error.style.display == "none"){
+           continue; 
+         } else {
+            counter++;
+         }}
 
-})
+    if (counter > 0){
+            return;
+    } else {
+            if (toast.classList.contains("hide")) {
+                toast.classList.replace("hide", "show");
+                } else {
+                    toast.classList.add("show");
+                }
+        }
+    })
 
 close_toast_button.addEventListener("click", (event) => {
     event.preventDefault();
